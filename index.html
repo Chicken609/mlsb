@@ -1,249 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MLSB — Standings & Stats</title>
-  <style>
-    /* Colors pulled from your logo */
-    :root{
-      --deep-red:#8b1e2d; /* logo diamond */
-      --bat-yellow:#ffcf66; /* bats */
-      --beige:#f6d79a; /* background circle */
-      --white:#ffffff;
-      --padder:#2b7aa3;
-      --grass-1:#4aa754;
-      --grass-2:#3da048;
-      --card-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-
-    /* Cartoon flat grass background (option 3) */
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-      background:
-        repeating-linear-gradient(90deg, var(--grass-1) 0 40px, var(--grass-2) 40px 80px),
-        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.02), transparent 25%),
-        var(--grass-1);
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-    }
-
-    header{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      padding:22px 18px;
-      max-width:1100px;
-      margin:26px auto 10px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-      border-radius:14px;
-      box-shadow: var(--card-shadow);
-      border: 3px solid rgba(255,255,255,0.06);
-    }
-
-    .logo-wrap{
-      width:96px;
-      height:96px;
-      border-radius:50%;
-      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.06), transparent), var(--beige);
-      display:flex;align-items:center;justify-content:center;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.14) inset;
-      flex-shrink:0;
-      border:6px solid var(--white);
-    }
-    .logo-wrap img{width:84px;height:84px;border-radius:50%;object-fit:cover;display:block}
-
-    h1{font-size:26px;margin:0;color:var(--deep-red);letter-spacing:0.6px}
-    p.league-sub{margin:4px 0 0;color:#21312d;opacity:0.9}
-
-    .container{max-width:1100px;margin:18px auto;padding:0 18px}
-
-    .grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
-
-    .card{background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));padding:14px;border-radius:12px;box-shadow:var(--card-shadow)}
-    table{width:100%;border-collapse:collapse;font-size:15px}
-    th,td{padding:8px 10px;text-align:center;border-bottom:1px solid rgba(0,0,0,0.06)}
-    th{background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);font-weight:700;color:#333}
-
-    /* Team color pills */
-    .team-pill{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;color:var(--white);font-size:13px}
-    .padres{background:#1f6f8b}
-    .brewers{background:#2a5b2e}
-    .redsox{background:var(--deep-red)}
-    .bluejays{background:#0c5aa6}
-
-    /* responsive */
-    @media (max-width:980px){
-      .grid{grid-template-columns:1fr;}
-    }
-
-    .small{font-size:13px;color:#444}
-    .muted{color:#666;font-size:13px}
-
-    /* Standings layout tweaks */
-    .standings-table th:first-child, .stats-table th:first-child{text-align:left;padding-left:14px}
-    .standings-table td:first-child, .stats-table td:first-child{text-align:left;padding-left:14px}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLSB Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .section {
+            background: white;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #aaa;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #ddd;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-wrap">
-      <!-- IMPORTANT: upload your logo file to the repo as "logo.png" in the root, or replace src with an external URL -->
-      <img src="logo.png" alt="MLSB logo" onerror="this.style.display='none'" />
+    <h1>MLSB Baseball League</h1>
+
+    <!-- ======================= SCHEDULE ======================= -->
+    <div class="section">
+        <h2>Schedule</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Matchup</th>
+                <th>Score</th>
+                <th>Winner</th>
+            </tr>
+
+            <!-- Game 1 (example) -->
+            <tr>
+                <td>November 10</td>
+                <td>Red Sox @ Blue Jays</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+
+            <!-- Game 2 (YOU ADDED) -->
+            <tr>
+                <td>November 13</td>
+                <td>Red Sox @ Blue Jays</td>
+                <td>Red Sox 1 - 0</td>
+                <td>Red Sox</td>
+            </tr>
+        </table>
     </div>
-    <div>
-      <h1>MLSB</h1>
-      <p class="league-sub">Standings • Schedule • Player Stats</p>
-      <p class="muted small">Colors pulled from your logo — deep red, warm beige and bat yellow. Grass theme: cartoon flat.</p>
-    </div>
-  </header>
 
-  <div class="container">
-    <div class="grid">
-      <!-- LEFT: main content -->
-      <div>
+    <!-- ======================= PLAYER STATS ======================= -->
+    <div class="section">
+        <h2>Player Stats</h2>
 
-        <!-- Standings -->
-        <div class="card" style="margin-bottom:14px">
-          <h2 style="margin:0 0 10px">Standings</h2>
-          <table class="standings-table" id="standings">
-            <thead>
-              <tr><th>Team</th><th>W</th><th>L</th><th>Win %</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><span class="team-pill padres">San Diego Padres</span></td><td id="padres-w">1</td><td id="padres-l">0</td><td id="padres-p">1.000</td></tr>
-              <tr><td><span class="team-pill brewers">Milwaukee Brewers</span></td><td id="brewers-w">0</td><td id="brewers-l">1</td><td id="brewers-p">0.000</td></tr>
-              <tr><td><span class="team-pill redsox">Boston Red Sox</span></td><td id="redsox-w">1</td><td id="redsox-l">0</td><td id="redsox-p">1.000</td></tr>
-              <tr><td><span class="team-pill bluejays">Toronto Blue Jays</span></td><td id="bluejays-w">0</td><td id="bluejays-l">1</td><td id="bluejays-p">0.000</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Schedule -->
-        <div class="card" style="margin-bottom:14px">
-          <h2 style="margin:0 0 10px">Season Schedule</h2>
-          <table id="schedule">
-            <thead><tr><th>Date</th><th>Matchup</th><th>Result</th></tr></thead>
-            <tbody>
-              <tr><td>Nov 12</td><td>Brewers @ Padres</td><td>Padres 5 - Brewers 4</td></tr>
-              <tr><td>Nov 13</td><td>Red Sox @ Blue Jays</td><td>Red Sox 1 - Blue Jays 0</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Playoffs card -->
-        <div class="card" style="margin-bottom:14px">
-          <h2 style="margin:0 0 10px">Playoffs</h2>
-          <table>
-            <thead><tr><th>Matchup</th><th>Game</th></tr></thead>
-            <tbody>
-              <tr><td>Seed 4 @ Seed 1</td><td>Game 1</td></tr>
-              <tr><td>Seed 3 @ Seed 2</td><td>Game 2</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
-
-      <!-- RIGHT: Player stats -->
-      <aside>
-        <div class="card">
-          <h2 style="margin:0 0 10px">Player Stats</h2>
-          <table class="stats-table" id="statsTable">
-            <thead>
-              <tr>
+        <h3>Red Sox</h3>
+        <table>
+            <tr>
                 <th>Player</th>
-                <th>Team</th>
-                <th>AB</th>
-                <th>H</th>
-                <th>HR</th>
-                <th>RBI</th>
                 <th>AVG</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- rows filled by JavaScript -->
-            </tbody>
-          </table>
-          <p class="small muted" style="margin-top:8px">Tip: To update stats, edit the <code>players</code> array in the script at the bottom of this file.</p>
-        </div>
-      </aside>
+                <th>Hits</th>
+                <th>AB</th>
+                <th>RBI</th>
+                <th>Walks</th>
+                <th>Strikeouts</th>
+            </tr>
+
+            <!-- Aiden (Game 2 update: 4 AB, 0-1, 3 walks, 1 K) -->
+            <tr>
+                <td>Aiden</td>
+                <td>.000</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>3</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <h3>Blue Jays</h3>
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>AVG</th>
+                <th>Hits</th>
+                <th>AB</th>
+                <th>RBI</th>
+                <th>Walks</th>
+                <th>Strikeouts</th>
+            </tr>
+
+            <!-- Christian (1 single → AVG .250, 1 hit, 4 AB) -->
+            <tr>
+                <td>Christian</td>
+                <td>.250</td>
+                <td>1</td>
+                <td>4</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+
+            <!-- Xavier (0-3, 4 AB, 1 walk, 3 strikeouts) -->
+            <tr>
+                <td>Xavier</td>
+                <td>.000</td>
+                <td>0</td>
+                <td>3</td>
+                <td>0</td>
+                <td>1</td>
+                <td>3</td>
+            </tr>
+        </table>
+
     </div>
-  </div>
-
-  <!-- ===== JavaScript: dynamic stats and safety checks ===== -->
-  <script>
-    // Players array (update these numbers when new games happen)
-    const players = [
-      {name: "Amadeo", team: "San Diego Padres", ab: 4, hits: 4, hr: 2, rbi: 5},
-      {name: "Dimitri", team: "Milwaukee Brewers", ab: 4, hits: 4, hr: 2, rbi: 4},
-      {name: "André", team: "San Diego Padres", ab: 4, hits: 1, hr: 0, rbi: 0},
-      {name: "Aiden", team: "Boston Red Sox", ab: 1, hits: 0, hr: 0, rbi: 0},
-      {name: "Matteo", team: "Boston Red Sox", ab: 0, hits: 0, hr: 0, rbi: 0},
-      {name: "Madden", team: "Milwaukee Brewers", ab: 0, hits: 0, hr: 0, rbi: 0},
-      {name: "Xavier", team: "Toronto Blue Jays", ab: 3, hits: 0, hr: 0, rbi: 0},
-      {name: "Christian", team: "Toronto Blue Jays", ab: 4, hits: 1, hr: 0, rbi: 0}
-    ];
-
-    function renderStats(){
-      const tbody = document.getElementById('statsTable').getElementsByTagName('tbody')[0];
-      tbody.innerHTML = '';
-
-      // sort by RBI descending (keep current request)
-      players.sort((a,b)=> b.rbi - a.rbi || b.hits - a.hits);
-
-      players.forEach(p=>{
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${p.name}</td>
-          <td>${p.team}</td>
-          <td>${p.ab}</td>
-          <td>${p.hits}</td>
-          <td>${p.hr}</td>
-          <td>${p.rbi}</td>
-          <td>${p.ab>0? (p.hits/p.ab).toFixed(3):'.000'}</td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
-
-    // Recalculate and render standings safely
-    function renderStandings(){
-      // derive standings from recorded teamWins/losses currently hard-coded from games you gave
-      const teamRecords = {
-        'San Diego Padres': {w:1,l:0},
-        'Milwaukee Brewers': {w:0,l:1},
-        'Boston Red Sox': {w:1,l:0},
-        'Toronto Blue Jays': {w:0,l:1}
-      };
-
-      function setRow(teamIdPrefix, rec){
-        const wEl = document.getElementById(teamIdPrefix+'-w');
-        const lEl = document.getElementById(teamIdPrefix+'-l');
-        const pEl = document.getElementById(teamIdPrefix+'-p');
-        if(wEl) wEl.innerText = rec.w;
-        if(lEl) lEl.innerText = rec.l;
-        if(pEl){
-          const pct = rec.w + rec.l > 0 ? (rec.w/(rec.w+rec.l)).toFixed(3) : '0.000';
-          pEl.innerText = pct;
-        }
-      }
-
-      setRow('padres', teamRecords['San Diego Padres']);
-      setRow('brewers', teamRecords['Milwaukee Brewers']);
-      setRow('redsox', teamRecords['Boston Red Sox']);
-      setRow('bluejays', teamRecords['Toronto Blue Jays']);
-    }
-
-    // call renderers on load
-    document.addEventListener('DOMContentLoaded', ()=>{
-      renderStats();
-      renderStandings();
-    });
-  </script>
 
 </body>
 </html>
